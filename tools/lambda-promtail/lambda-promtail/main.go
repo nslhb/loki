@@ -32,6 +32,7 @@ var (
 	batchSize                          int
 	s3Clients                          map[string]*s3.Client
 	extraLabels                        model.LabelSet
+	orgid                              string
 )
 
 func setupArguments() {
@@ -60,6 +61,8 @@ func setupArguments() {
 	if (username != "" && password == "") || (username == "" && password != "") {
 		panic("both username and password must be set if either one is set")
 	}
+
+    orgid = os.Getenv("X_SCOPE_ORG_ID")
 
 	keep := os.Getenv("KEEP_STREAM")
 	// Anything other than case-insensitive 'true' is treated as 'false'.

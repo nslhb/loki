@@ -173,6 +173,8 @@ func send(ctx context.Context, buf []byte) (int, error) {
 		req.SetBasicAuth(username, password)
 	}
 
+    req.Header.Set("X-Scope-OrgID", orgid)
+
 	resp, err := http.DefaultClient.Do(req.WithContext(ctx))
 	if err != nil {
 		return -1, err

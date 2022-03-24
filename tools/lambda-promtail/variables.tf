@@ -35,6 +35,13 @@ variable "password" {
   default     = ""
 }
 
+variable "orgid" {
+  type        = string
+  description = "X-Scope-OrgID"
+  sensitive   = true
+  default     = ""
+}
+
 variable "keep_stream" {
   type        = string
   description = "Determines whether to keep the CloudWatch Log Stream value as a Loki label when writing logs from lambda-promtail."
