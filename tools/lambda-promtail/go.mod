@@ -111,3 +111,4 @@ require (
 )
 
 replace k8s.io/client-go => k8s.io/client-go v0.21.0
+//replace github.com/hashicorp/consul => github.com/hashicorp/consul v1.5.1
