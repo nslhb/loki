@@ -168,13 +168,12 @@ func send(ctx context.Context, buf []byte) (int, error) {
 	}
 	req.Header.Set("Content-Type", contentType)
 	req.Header.Set("User-Agent", userAgent)
+	req.Header.Set("x-scope-orgid", orgid)
 
 	if username != "" && password != "" {
 		req.SetBasicAuth(username, password)
 	}
-
-    req.Header.Set("X-Scope-OrgID", orgid)
-
+        
 	resp, err := http.DefaultClient.Do(req.WithContext(ctx))
 	if err != nil {
 		return -1, err
