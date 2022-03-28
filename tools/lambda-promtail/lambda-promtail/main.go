@@ -62,7 +62,10 @@ func setupArguments() {
 		panic("both username and password must be set if either one is set")
 	}
 
-    orgid = os.Getenv("X_SCOPE_ORG_ID")
+        orgid = os.Getenv("ORGID")
+	if orgid == "" {
+		panic(errors.New("required environmental variable ORGID not present, format: 123456789...."))
+	}
 
 	keep := os.Getenv("KEEP_STREAM")
 	// Anything other than case-insensitive 'true' is treated as 'false'.
