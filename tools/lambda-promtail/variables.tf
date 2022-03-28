@@ -37,9 +37,9 @@ variable "password" {
 
 variable "orgid" {
   type        = string
-  description = "X-Scope-OrgID"
+  description = "header(x-scope-orgid) to be set"
   sensitive   = true
-  default     = ""
+  default     = "xxxxxxxxxxxxx"
 }
 
 variable "keep_stream" {
