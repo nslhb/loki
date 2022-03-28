@@ -85,7 +85,7 @@ Resources:
           PASSWORD: !Ref Password
           KEEP_STREAM: !Ref KeepStream
           EXTRA_LABELS: !Ref ExtraLabels
-          X_SCOPE_ORG_ID: !Ref OrgId
+          ORGID: !Ref OrgId
   LambdaPromtailVersion:
     Type: AWS::Lambda::Version
     Properties:
